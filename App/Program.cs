@@ -1,7 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using DAL.Contexts;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<AppointmentDBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AppointmentDBContext")));
 
 var app = builder.Build();
 
