@@ -12,10 +12,10 @@ namespace BLL.Services
     {
         AppointmentRepo repo;
         IMapper mapper;
-        public AppointmentService(AppointmentRepo repo)
+        public AppointmentService(AppointmentRepo repo, IMapper mapper)
         {
             this.repo = repo;
-            mapper = MapperConfig.GetMapper();
+            this.mapper = mapper;
         }
         public List<AppointmentDTO> Get()
         {

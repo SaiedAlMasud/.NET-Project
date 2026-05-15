@@ -1,19 +1,28 @@
-using Microsoft.EntityFrameworkCore;
-using DAL.Contexts;
+using BLL.Services;
+using DAL.DbContext;
 using DAL.Repos;
+using Microsoft.EntityFrameworkCore;
+using BLL.Mappings;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<AppointmentDBContext>(options =>
+builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("AppointmentDBContext")));
+
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddScoped<PatientRepo>();
 builder.Services.AddScoped<DoctorRepo>();
 builder.Services.AddScoped<AppointmentRepo>();
 builder.Services.AddScoped<DoctorScheduleRepo>();
+
+builder.Services.AddScoped<PatientService>();
+builder.Services.AddScoped<DoctorService>();
+builder.Services.AddScoped<AppointmentService>();
+builder.Services.AddScoped<DoctorScheduleService>();
 
 var app = builder.Build();
 

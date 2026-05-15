@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace DAL.Contexts;
+namespace DAL.DbContext;
 
-public partial class AppointmentDBContext : DbContext
+public partial class AppDbContext : Microsoft.EntityFrameworkCore.DbContext
 {
-    public AppointmentDBContext()
+    public AppDbContext()
     {
     }
 
-    public AppointmentDBContext(DbContextOptions<AppointmentDBContext> options)
+    public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
     {
     }

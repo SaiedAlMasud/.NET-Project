@@ -1,5 +1,5 @@
-﻿using DAL.Entities;
-using DAL.Contexts;
+﻿using DAL.DbContext;
+using DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,8 +8,8 @@ namespace DAL.Repos
 {
     public class DoctorRepo
     {
-        AppointmentDBContext db;
-        public DoctorRepo(AppointmentDBContext db)
+        AppDbContext db;
+        public DoctorRepo(AppDbContext db)
         {
             this.db = db;
         }

@@ -12,10 +12,10 @@ namespace BLL.Services
     {
         DoctorRepo repo;
         IMapper mapper;
-        public DoctorService(DoctorRepo repo)
+        public DoctorService(DoctorRepo repo, IMapper mapper)
         {
             this.repo = repo;
-            mapper = MapperConfig.GetMapper();
+            this.mapper = mapper;
         }
         public List<DoctorDTO> Get()
         {
