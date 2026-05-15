@@ -14,8 +14,14 @@ namespace App.Controllers
         public IActionResult Index()
         {
             var data = patientService.Get();
-            return View();
+            return View(data);
         }
+        public IActionResult Details(int id)
+        {
+            var data = patientService.Get(id);
+            return View(data);
+        }
+
         [HttpGet]
         public IActionResult Create()
         {

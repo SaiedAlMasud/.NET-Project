@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "D:\\.net codes\\AppoinmentSystem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6C0F928A-B28D-D207-D239-598F22CCD0B7}|App\\App.csproj|d:\\.net codes\\appoinmentsystem\\app\\views\\patient\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6C0F928A-B28D-D207-D239-598F22CCD0B7}|App\\App.csproj|solutionrelative:app\\views\\patient\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C0F928A-B28D-D207-D239-598F22CCD0B7}|App\\App.csproj|d:\\.net codes\\appoinmentsystem\\app\\views\\patient\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6C0F928A-B28D-D207-D239-598F22CCD0B7}|App\\App.csproj|solutionrelative:app\\views\\patient\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C0F928A-B28D-D207-D239-598F22CCD0B7}|App\\App.csproj|d:\\.net codes\\appoinmentsystem\\app\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C0F928A-B28D-D207-D239-598F22CCD0B7}|App\\App.csproj|solutionrelative:app\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E032D82-9BE7-42B0-8352-C19FE4E91F90}|BLL\\BLL.csproj|d:\\.net codes\\appoinmentsystem\\bll\\services\\patientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E032D82-9BE7-42B0-8352-C19FE4E91F90}|BLL\\BLL.csproj|solutionrelative:bll\\services\\patientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC33F82A-D231-4EDD-9D56-E8892A35E1DE}|DAL\\DAL.csproj|d:\\.net codes\\appoinmentsystem\\dal\\dbcontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC33F82A-D231-4EDD-9D56-E8892A35E1DE}|DAL\\DAL.csproj|solutionrelative:dal\\dbcontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6C0F928A-B28D-D207-D239-598F22CCD0B7}|App\\App.csproj|d:\\.net codes\\appoinmentsystem\\app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6C0F928A-B28D-D207-D239-598F22CCD0B7}|App\\App.csproj|solutionrelative:app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,20 +43,8 @@
       "RelativeMoniker": "D:0:0:{CC33F82A-D231-4EDD-9D56-E8892A35E1DE}|DAL\\DAL.csproj|solutionrelative:dal\\repos\\appointmentrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CC33F82A-D231-4EDD-9D56-E8892A35E1DE}|DAL\\DAL.csproj|d:\\.net codes\\appoinmentsystem\\dal\\dbcontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC33F82A-D231-4EDD-9D56-E8892A35E1DE}|DAL\\DAL.csproj|solutionrelative:dal\\dbcontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C0F928A-B28D-D207-D239-598F22CCD0B7}|App\\App.csproj|d:\\.net codes\\appoinmentsystem\\app\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C0F928A-B28D-D207-D239-598F22CCD0B7}|App\\App.csproj|solutionrelative:app\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CC33F82A-D231-4EDD-9D56-E8892A35E1DE}|DAL\\DAL.csproj|d:\\.net codes\\appoinmentsystem\\dal\\entities\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CC33F82A-D231-4EDD-9D56-E8892A35E1DE}|DAL\\DAL.csproj|solutionrelative:dal\\entities\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E032D82-9BE7-42B0-8352-C19FE4E91F90}|BLL\\BLL.csproj|d:\\.net codes\\appoinmentsystem\\bll\\services\\patientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E032D82-9BE7-42B0-8352-C19FE4E91F90}|BLL\\BLL.csproj|solutionrelative:bll\\services\\patientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E032D82-9BE7-42B0-8352-C19FE4E91F90}|BLL\\BLL.csproj|d:\\.net codes\\appoinmentsystem\\bll\\services\\appointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -59,10 +67,6 @@
       "RelativeMoniker": "D:0:0:{6E032D82-9BE7-42B0-8352-C19FE4E91F90}|BLL\\BLL.csproj|solutionrelative:bll\\bll.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C0F928A-B28D-D207-D239-598F22CCD0B7}|App\\App.csproj|d:\\.net codes\\appoinmentsystem\\app\\views\\patient\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6C0F928A-B28D-D207-D239-598F22CCD0B7}|App\\App.csproj|solutionrelative:app\\views\\patient\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CC33F82A-D231-4EDD-9D56-E8892A35E1DE}|DAL\\DAL.csproj|d:\\.net codes\\appoinmentsystem\\dal\\dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{CC33F82A-D231-4EDD-9D56-E8892A35E1DE}|DAL\\DAL.csproj|solutionrelative:dal\\dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
@@ -78,7 +82,20 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\.net codes\\AppoinmentSystem\\App\\Views\\Patient\\Details.cshtml",
+              "RelativeDocumentMoniker": "App\\Views\\Patient\\Details.cshtml",
+              "ToolTip": "D:\\.net codes\\AppoinmentSystem\\App\\Views\\Patient\\Details.cshtml",
+              "RelativeToolTip": "App\\Views\\Patient\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-15T06:36:16.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\.net codes\\AppoinmentSystem\\DAL\\DbContext\\AppDbContext.cs",
               "RelativeDocumentMoniker": "DAL\\DbContext\\AppDbContext.cs",
@@ -91,7 +108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "Patient.cs",
               "DocumentMoniker": "D:\\.net codes\\AppoinmentSystem\\DAL\\Entities\\Patient.cs",
               "RelativeDocumentMoniker": "DAL\\Entities\\Patient.cs",
@@ -104,26 +121,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "PatientController.cs",
               "DocumentMoniker": "D:\\.net codes\\AppoinmentSystem\\App\\Controllers\\PatientController.cs",
               "RelativeDocumentMoniker": "App\\Controllers\\PatientController.cs",
               "ToolTip": "D:\\.net codes\\AppoinmentSystem\\App\\Controllers\\PatientController.cs",
               "RelativeToolTip": "App\\Controllers\\PatientController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-14T17:03:27.219Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "PatientService.cs",
               "DocumentMoniker": "D:\\.net codes\\AppoinmentSystem\\BLL\\Services\\PatientService.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\PatientService.cs",
               "ToolTip": "D:\\.net codes\\AppoinmentSystem\\BLL\\Services\\PatientService.cs",
               "RelativeToolTip": "BLL\\Services\\PatientService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-14T16:14:45.333Z",
               "EditorCaption": ""
@@ -131,19 +148,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "AppointmentService.cs",
-              "DocumentMoniker": "D:\\.net codes\\AppoinmentSystem\\BLL\\Services\\AppointmentService.cs",
-              "RelativeDocumentMoniker": "BLL\\Services\\AppointmentService.cs",
-              "ToolTip": "D:\\.net codes\\AppoinmentSystem\\BLL\\Services\\AppointmentService.cs",
-              "RelativeToolTip": "BLL\\Services\\AppointmentService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-14T16:33:21.982Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "AppointmentRepo.cs",
               "DocumentMoniker": "D:\\.net codes\\AppoinmentSystem\\DAL\\Repos\\AppointmentRepo.cs",
               "RelativeDocumentMoniker": "DAL\\Repos\\AppointmentRepo.cs",
@@ -156,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "DoctorRepo.cs",
               "DocumentMoniker": "D:\\.net codes\\AppoinmentSystem\\DAL\\Repos\\DoctorRepo.cs",
               "RelativeDocumentMoniker": "DAL\\Repos\\DoctorRepo.cs",
@@ -169,7 +173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "DoctorScheduleRepo.cs",
               "DocumentMoniker": "D:\\.net codes\\AppoinmentSystem\\DAL\\Repos\\DoctorScheduleRepo.cs",
               "RelativeDocumentMoniker": "DAL\\Repos\\DoctorScheduleRepo.cs",
@@ -182,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "PatientRepo.cs",
               "DocumentMoniker": "D:\\.net codes\\AppoinmentSystem\\DAL\\Repos\\PatientRepo.cs",
               "RelativeDocumentMoniker": "DAL\\Repos\\PatientRepo.cs",
@@ -196,6 +200,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\.net codes\\AppoinmentSystem\\App\\Views\\Patient\\Index.cshtml",
+              "RelativeDocumentMoniker": "App\\Views\\Patient\\Index.cshtml",
+              "ToolTip": "D:\\.net codes\\AppoinmentSystem\\App\\Views\\Patient\\Index.cshtml",
+              "RelativeToolTip": "App\\Views\\Patient\\Index.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAcwDkAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-15T04:18:37.237Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AppointmentService.cs",
+              "DocumentMoniker": "D:\\.net codes\\AppoinmentSystem\\BLL\\Services\\AppointmentService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\AppointmentService.cs",
+              "ToolTip": "D:\\.net codes\\AppoinmentSystem\\BLL\\Services\\AppointmentService.cs",
+              "RelativeToolTip": "BLL\\Services\\AppointmentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T16:33:21.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\.net codes\\AppoinmentSystem\\App\\Program.cs",
               "RelativeDocumentMoniker": "App\\Program.cs",
@@ -208,7 +238,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "DoctorScheduleService.cs",
               "DocumentMoniker": "D:\\.net codes\\AppoinmentSystem\\BLL\\Services\\DoctorScheduleService.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\DoctorScheduleService.cs",
@@ -221,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "DoctorService.cs",
               "DocumentMoniker": "D:\\.net codes\\AppoinmentSystem\\BLL\\Services\\DoctorService.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\DoctorService.cs",
@@ -234,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "D:\\.net codes\\AppoinmentSystem\\BLL\\Mapping\\MappingProfile.cs",
               "RelativeDocumentMoniker": "BLL\\Mapping\\MappingProfile.cs",
@@ -247,7 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "BLL.csproj",
               "DocumentMoniker": "D:\\.net codes\\AppoinmentSystem\\BLL\\BLL.csproj",
               "RelativeDocumentMoniker": "BLL\\BLL.csproj",
@@ -260,20 +290,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\.net codes\\AppoinmentSystem\\App\\Views\\Patient\\Index.cshtml",
-              "RelativeDocumentMoniker": "App\\Views\\Patient\\Index.cshtml",
-              "ToolTip": "D:\\.net codes\\AppoinmentSystem\\App\\Views\\Patient\\Index.cshtml",
-              "RelativeToolTip": "App\\Views\\Patient\\Index.cshtml",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAADsAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-15T04:18:37.237Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "DAL.csproj",
               "DocumentMoniker": "D:\\.net codes\\AppoinmentSystem\\DAL\\DAL.csproj",
               "RelativeDocumentMoniker": "DAL\\DAL.csproj",
