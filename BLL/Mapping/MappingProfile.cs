@@ -9,9 +9,18 @@ namespace BLL.Mappings
         public MappingProfile()
         {
             CreateMap<Patient, PatientDTO>().ReverseMap();
+            CreateMap<Patient, PatientRegisterDTO>().ReverseMap();
+
             CreateMap<Doctor, DoctorDTO>().ReverseMap();
+            CreateMap<Doctor, DoctorRegisterDTO>().ReverseMap();
+
             CreateMap<Appointment, AppointmentDTO>().ReverseMap();
             CreateMap<DoctorSchedule, DoctorScheduleDTO>().ReverseMap();
+
+            CreateMap<User, UserDTO>().ReverseMap();
+            CreateMap<User, UserRegisterDTO>().ReverseMap();
+            
+            
         }
     }
 }

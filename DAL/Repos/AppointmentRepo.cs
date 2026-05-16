@@ -38,5 +38,15 @@ namespace DAL.Repos
             db.Appointments.Remove(exobj);
             return db.SaveChanges() > 0;
         }
+        public List<Appointment> GetAppointmentsByPatientId(int patientId)
+        {
+            return db.Appointments.Where(a => a.PatientId == patientId).ToList();
+        }
+
+        // New methods for Doctor Dashboard
+        public List<Appointment> GetAppointmentsByDoctorId(int doctorId)
+        {
+            return db.Appointments.Where(a => a.DoctorId == doctorId).ToList();
+        }
     }
 }

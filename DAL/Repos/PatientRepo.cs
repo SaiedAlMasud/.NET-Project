@@ -26,6 +26,15 @@ namespace DAL.Repos
         {
             return db.Patients.Find(id);
         }
+        public Patient GetByUserId(int userId)
+        {
+            return db.Patients.FirstOrDefault(p => p.UserId == userId);
+        }
+
+        public Patient GetByEmail(string email)
+        {
+            return db.Patients.FirstOrDefault(p => p.Email == email);
+        }
         public bool Update(Patient p)
         {
             var exobj = Get(p.Id);

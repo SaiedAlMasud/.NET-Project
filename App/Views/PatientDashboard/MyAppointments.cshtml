@@ -1,0 +1,89 @@
+﻿@model IEnumerable<BLL.DTOs.AppointmentDTO>
+
+@{
+    ViewData["Title"] = "My Appointments";
+    Layout = "_Layout";
+}
+
+<div style="padding: 20px;">
+    <h1>My Appointments</h1>
+    
+    @if (TempData["Success"] != null)
+    {
+        <div style="background: #d4edda; color: #155724; padding: 10px; border-radius: 4px; margin-bottom: 15px;">
+            @TempData["Success"]
+        </div>
+    }
+    
+    <hr />
+    
+    @if (Model == null || !Model.Any())
+    {
+        <div style="text-align: center; padding: 50px; background: #f8f9fa; border-radius: 5px;">
+            <h3>No Appointments Found</h3>
+            <p>You don't have any scheduled appointments.</p>
+            <a asp-action="BookAppointment" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #28a745; color: white; text-decoration: none; border-radius: 4px;">Book Your First Appointment</a>
+        </div>
+    }
+    else
+    {
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="background: #f2f2f2;">
+                    <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Doctor</th>
+                    <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Date & Time</th>
+                    <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Status</th>
+                    <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Payment</th>
+                    <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 10px;">Dr. @ViewBag.DoctorName</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">@item.AppointmentDateTime.ToString("MMM dd, yyyy hh:mm tt")</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">
+                            @if (item.Status == "Scheduled")
+                            {
+                                <span style="background: #ffc107; padding: 3px 8px; border-radius: 3px;">@item.Status</span>
+                            }
+                            else if (item.Status == "Completed")
+                            {
+                                <span style="background: #28a745; color: white; padding: 3px 8px; border-radius: 3px;">@item.Status</span>
+                            }
+                            else
+                            {
+                                <span style="background: #dc3545; color: white; padding: 3px 8px; border-radius: 3px;">@item.Status</span>
+                            }
+                        </td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">
+                            @if (item.PaymentStatus == "Paid")
+                            {
+                                <span style="color: green;">Paid</span>
+                            }
+                            else
+                            {
+                                <span style="color: orange;">Pending</span>
+                            }
+                        </td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">
+                            @if (item.Status == "Scheduled")
+                            {
+                                <a asp-action="CancelAppointment" asp-route-id="@item.Id" onclick="return confirm('Are you sure you want to cancel this appointment?')" style="color: red;">Cancel</a>
+                            }
+                            else
+                            {
+                                <span style="color: gray;">No Action</span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    
+    <div style="margin-top: 20px;">
+        <a asp-action="Index" style="display: inline-block; padding: 8px 15px; background: #6c757d; color: white; text-decoration: none; border-radius: 4px;">Back to Dashboard</a>
+    </div>
+</div>

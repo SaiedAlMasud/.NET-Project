@@ -2,50 +2,64 @@
 using BLL.DTOs;
 using DAL.Entities;
 using DAL.Repos;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace BLL.Services
 {
     public class PatientService
     {
-        PatientRepo repo;
-        IMapper mapper;
-        public PatientService(PatientRepo repo, IMapper mapper)
+        private PatientRepo patientRepo;
+        private IMapper mapper;
+
+        public PatientService(PatientRepo patientRepo, IMapper mapper)
         {
-            this.repo = repo;
+            this.patientRepo = patientRepo;
             this.mapper = mapper;
         }
-        public List<PatientDTO> Get()
-        {
-            var data = repo.Get();
-            var res = mapper.Map<List<PatientDTO>>(data);
-            return res;
-        }
-        public PatientDTO Get(int id)
-        {
-            var data = repo.Get(id);
-            var res = mapper.Map<PatientDTO>(data);
-            return res;
-        }
-        public bool Create(PatientDTO p)
-        {
-            var data = mapper.Map<Patient>(p);
-            var res = repo.Create(data);
-            return res;
 
-        }
-        public bool Update(PatientDTO p)
+        public bool CreatePatient(PatientRegisterDTO registerDto, int userId)
         {
-            var data = mapper.Map<Patient>(p);
-            var res = repo.Update(data);
-            return res;
-        }
-        public bool Delete(int id)
-        {
-            return repo.Delete(id);
+            var patient = new Patient
+            {
+                UserId = userId,
+                FirstName = registerDto.FirstName,
+                LastName = registerDto.LastName,
+                Email = registerDto.Email,
+                PhoneNumber = registerDto.PhoneNumber,
+                DateOfBirth = registerDto.DateOfBirth,
+                Gender = registerDto.Gender
+            };
+
+            return patientRepo.Create(patient);
         }
 
+        public List<PatientDTO> GetAllPatients()
+        {
+            var patients = patientRepo.Get();
+            return mapper.Map<List<PatientDTO>>(patients);
+        }
+
+        public PatientDTO GetPatientById(int id)
+        {
+            var patient = patientRepo.Get(id);
+            return mapper.Map<PatientDTO>(patient);
+        }
+
+        public PatientDTO GetPatientByUserId(int userId)
+        {
+            var patient = patientRepo.GetByUserId(userId);
+            return mapper.Map<PatientDTO>(patient);
+        }
+
+        public bool UpdatePatient(PatientDTO patientDto)
+        {
+            var patient = mapper.Map<Patient>(patientDto);
+            return patientRepo.Update(patient);
+        }
+
+        public bool DeletePatient(int id)
+        {
+            return patientRepo.Delete(id);
+        }
     }
 }

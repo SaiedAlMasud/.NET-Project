@@ -38,5 +38,14 @@ namespace DAL.Repos
             db.DoctorSchedules.Remove(exobj);
             return db.SaveChanges() > 0;
         }
+        public List<DoctorSchedule> GetSchedulesByDoctorId(int doctorId)
+        {
+            return db.DoctorSchedules.Where(ds => ds.DoctorId == doctorId).ToList();
+        }
+
+        public DoctorSchedule GetScheduleByDoctorAndDay(int doctorId, int dayOfWeek)
+        {
+            return db.DoctorSchedules.FirstOrDefault(ds => ds.DoctorId == doctorId && ds.DayOfWeek == dayOfWeek);
+        }
     }
 }

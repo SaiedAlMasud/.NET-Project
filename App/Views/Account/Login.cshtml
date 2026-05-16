@@ -1,0 +1,44 @@
+﻿@model App.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+
+<hr />
+
+<form asp-controller="Account" asp-action="Login" method="post">
+    <div asp-validation-summary="ModelOnly" style="color: red; margin-bottom: 15px;"></div>
+    
+    <div style="margin-bottom: 10px;">
+        <label asp-for="Email"></label><br />
+        <input asp-for="Email" style="width: 300px;" />
+        <span asp-validation-for="Email" style="color: red;"></span>
+    </div>
+    
+    <div style="margin-bottom: 10px;">
+        <label asp-for="Password"></label><br />
+        <input asp-for="Password" type="password" style="width: 300px;" />
+        <span asp-validation-for="Password" style="color: red;"></span>
+    </div>
+    
+    <div style="margin-bottom: 10px;">
+        <input asp-for="RememberMe" />
+        <label asp-for="RememberMe">Remember me</label>
+    </div>
+    
+    <div style="margin-top: 20px;">
+        <button type="submit" style="padding: 5px 15px;">Login</button>
+    </div>
+    
+    <div style="margin-top: 10px;">
+        Don't have an account? <a asp-controller="Account" asp-action="Register">Register here</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

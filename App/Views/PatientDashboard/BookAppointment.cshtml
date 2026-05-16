@@ -1,0 +1,67 @@
+﻿@model BLL.DTOs.AppointmentDTO
+
+@{
+    ViewData["Title"] = "Book Appointment";
+    Layout = "_Layout";
+    var doctors = ViewBag.Doctors as List<BLL.DTOs.DoctorDTO>;
+}
+
+<div style="padding: 20px; max-width: 600px; margin: 0 auto;">
+    <h1>Book an Appointment</h1>
+    <hr />
+    
+    <form asp-action="BookAppointment" method="post">
+        <div asp-validation-summary="All" style="color: red; margin-bottom: 15px;"></div>
+        
+        <div style="margin-bottom: 15px;">
+            <label asp-for="DoctorId">Select Doctor</label><br />
+            <select asp-for="DoctorId" style="width: 100%; padding: 8px; margin-top: 5px;" required>
+                <option value="">-- Select Doctor --</option>
+                @if (doctors != null)
+                {
+                    foreach (var doctor in doctors)
+                    {
+                        <option value="@doctor.Id">Dr. @doctor.FullName - @doctor.Specialization (Fee: @doctor.ConsultationFee BDT)</option>
+                    }
+                }
+            </select>
+            <span asp-validation-for="DoctorId" style="color: red;"></span>
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+            <label asp-for="AppointmentDateTime">Appointment Date & Time</label><br />
+            <input asp-for="AppointmentDateTime" type="datetime-local" style="width: 100%; padding: 8px; margin-top: 5px;" required />
+            <span asp-validation-for="AppointmentDateTime" style="color: red;"></span>
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+            <label asp-for="Status">Status</label><br />
+            <input asp-for="Status" style="width: 100%; padding: 8px; margin-top: 5px;" value="Scheduled" />
+            <span asp-validation-for="Status" style="color: red;"></span>
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label asp-for="PaymentStatus">PaymentStatus</label><br />
+            <input asp-for="PaymentStatus" style="width: 100%; padding: 8px; margin-top: 5px;" value="Pending" />
+            <span asp-validation-for="PaymentStatus" style="color: red;"></span>
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label asp-for="Symtoms">Symptoms (Optional)</label><br />
+            <textarea asp-for="Symtoms" rows="4" style="width: 100%; padding: 8px; margin-top: 5px;"></textarea>
+            <span asp-validation-for="Symtoms" style="color: red;"></span>
+        </div>
+        
+        <div style="margin-top: 20px;">
+            <button type="submit" style="background: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Book Appointment</button>
+            <a asp-action="MyAppointments" style="margin-left: 10px; padding: 10px 20px; background: #6c757d; color: white; text-decoration: none; border-radius: 4px;">Cancel</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        // Set min date to today
+        var today = new Date();
+        today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+        document.querySelector('input[type="datetime-local"]').min = today.toISOString().slice(0, 16);
+    </script>
+}

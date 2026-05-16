@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BLL.DTOs.AppointmentDTO>
+
+@{
+    ViewData["Title"] = "Today's Appointments";
+    Layout = "_Layout";
+}
+
+<div style="padding: 20px;">
+    <h1>Today's Appointments</h1>
+    <p>@DateTime.Now.ToString("dddd, MMMM dd, yyyy")</p>
+    <hr />
+    
+    @if (Model == null || !Model.Any())
+    {
+        <div style="text-align: center; padding: 50px; background: #f8f9fa; border-radius: 5px;">
+            <h3>No Appointments Today</h3>
+            <p>You have no appointments scheduled for today. Enjoy your day!</p>
+        </div>
+    }
+    else
+    {
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+            @foreach (var item in Model.OrderBy(a => a.AppointmentDateTime))
+            {
+                <div style="border: 1px solid #ddd; padding: 15px; border-radius: 5px; background: #f9f9f9;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h3 style="margin: 0 0 5px 0;">@item.PatientId</h3>
+                            <p style="margin: 0;"><strong>Time:</strong> @item.AppointmentDateTime.ToString("hh:mm tt")</p>
+                            <p style="margin: 5px 0 0 0;"><strong>Symptoms:</strong> @(string.IsNullOrEmpty(item.Symtoms) ? "No symptoms provided" : item.Symtoms)</p>
+                        </div>
+                        <div>
+                            <span style="background: @(item.Status == "Scheduled" ? "#ffc107" : "#28a745"); padding: 5px 10px; border-radius: 3px;">
+                                @item.Status
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    
+    <div style="margin-top: 20px;">
+        <a asp-action="Index" style="display: inline-block; padding: 8px 15px; background: #6c757d; color: white; text-decoration: none; border-radius: 4px;">Back to Dashboard</a>
+    </div>
+</div>

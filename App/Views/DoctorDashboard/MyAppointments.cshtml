@@ -1,0 +1,77 @@
+﻿@model IEnumerable<BLL.DTOs.AppointmentDTO>
+
+@{
+    ViewData["Title"] = "My Appointments";
+    Layout = "_Layout";
+}
+
+<div style="padding: 20px;">
+    <h1>My Appointments</h1>
+    
+    @if (TempData["Success"] != null)
+    {
+        <div style="background: #d4edda; color: #155724; padding: 10px; border-radius: 4px; margin-bottom: 15px;">
+            @TempData["Success"]
+        </div>
+    }
+    
+    <hr />
+    
+    @if (Model == null || !Model.Any())
+    {
+        <div style="text-align: center; padding: 50px; background: #f8f9fa; border-radius: 5px;">
+            <h3>No Appointments Found</h3>
+            <p>You don't have any scheduled appointments yet.</p>
+        </div>
+    }
+    else
+    {
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="background: #f2f2f2;">
+                    <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Patient</th>
+                    <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Date & Time</th>
+                    <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Symptoms</th>
+                    <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Status</th>
+                    <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 10px;">@item.PatientId</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">@item.AppointmentDateTime.ToString("MMM dd, yyyy hh:mm tt")</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">@(string.IsNullOrEmpty(item.Symtoms) ? "No symptoms provided" : item.Symtoms)</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">
+                            <span style="background: @(item.Status == "Scheduled" ? "#ffc107" : item.Status == "Completed" ? "#28a745" : "#dc3545"); color: @(item.Status == "Scheduled" ? "#000" : "#fff"); padding: 3px 8px; border-radius: 3px;">
+                                @item.Status
+                            </span>
+                        </td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">
+                            <select onchange="updateStatus(@item.Id, this.value)" style="padding: 5px;">
+                                <option value="">Change Status</option>
+                                <option value="Confirmed">Confirmed</option>
+                                <option value="Completed">Completed</option>
+                                <option value="Cancelled">Cancelled</option>
+                                <option value="NoShow">No Show</option>
+                            </select>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    
+    <div style="margin-top: 20px;">
+        <a asp-action="Index" style="display: inline-block; padding: 8px 15px; background: #6c757d; color: white; text-decoration: none; border-radius: 4px;">Back to Dashboard</a>
+    </div>
+</div>
+
+<script>
+    function updateStatus(id, status) {
+        if (status) {
+            window.location.href = `/DoctorDashboard/UpdateAppointmentStatus?id=${id}&status=${status}`;
+        }
+    }
+</script>
