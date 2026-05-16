@@ -13,7 +13,7 @@ namespace BLL.DTOs
 
         public int DoctorId { get; set; }
 
-        public DateTime AppointmentDateTime { get; set; }
+        public DateOnly AppointmentDateTime { get; set; }
 
         public string Status { get; set; } = null!;
 
@@ -22,5 +22,7 @@ namespace BLL.DTOs
         public decimal FinalAmount { get; set; }
 
         public string PaymentStatus { get; set; } = null!;
+
+        public string DoctorName { get; set; } = string.Empty;
     }
 }

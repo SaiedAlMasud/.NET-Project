@@ -13,12 +13,14 @@ namespace App.Controllers
         private UserRepo userRepo;
         private PatientRepo patientRepo;
         private DoctorRepo doctorRepo;
+        private AdminRepo adminRepo;
 
-        public AccountController(UserRepo userRepo, PatientRepo patientRepo, DoctorRepo doctorRepo)
+        public AccountController(UserRepo userRepo, PatientRepo patientRepo, DoctorRepo doctorRepo, AdminRepo adminRepo)
         {
             this.userRepo = userRepo;
             this.patientRepo = patientRepo;
             this.doctorRepo = doctorRepo;
+            this.adminRepo = adminRepo;
         }
 
         [HttpGet]
@@ -32,6 +34,11 @@ namespace App.Controllers
         public IActionResult Register(RegisterViewModel model, string role)
         {
             if (role == "Patient")
+            {
+                ModelState.Remove("Specialization");
+                ModelState.Remove("ConsultationFee");
+            }
+            else if(role == "Admin")
             {
                 ModelState.Remove("Specialization");
                 ModelState.Remove("ConsultationFee");
@@ -93,10 +100,21 @@ namespace App.Controllers
                         };
                         doctorRepo.Create(doctor);
                     }
-
-                    // Auto login after registration
-                    SignInUser(model.Email, role);
-                    return RedirectToAction("Index", "Home");
+                    else if (role == "Admin")
+                    {
+                        var admin = new Admin
+                        {
+                            UserId = userId,
+                            FirstName = model.FirstName,
+                            LastName = model.LastName,
+                            Email = model.Email,
+                            PhoneNumber = model.PhoneNumber,
+                            DateOfBirth = model.DateOfBirth,
+                            Gender = model.Gender
+                        };
+                        adminRepo.Create(admin);
+                    }
+                    return RedirectToAction("Login", "Account");
                 }
             }
 
@@ -123,8 +141,10 @@ namespace App.Controllers
 
                     if (user.Role == "Doctor")
                         return RedirectToAction("Index", "DoctorDashboard");
-                    else
+                    else if (user.Role == "Patient")
                         return RedirectToAction("Index", "PatientDashboard");
+                    else if (user.Role == "Admin")
+                        return RedirectToAction("Users", "AdminDashboard");
                 }
 
                 ModelState.AddModelError("", "Invalid email or password");
@@ -159,7 +179,7 @@ namespace App.Controllers
         public IActionResult Logout()
         {
             HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme).Wait();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
 
         public IActionResult AccessDenied()

@@ -42,6 +42,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/.net codes/AppoinmentSystem/App/Views/AdminDashboard/Users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/.net codes/AppoinmentSystem/App/Views/DoctorDashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -72,6 +76,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/.net codes/AppoinmentSystem/App/Views/PatientDashboard/MyAppointments.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudERhc2hib2FyZFxNeUFwcG9pbnRtZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/.net codes/AppoinmentSystem/App/Views/PatientDashboard/UpdateAppointment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudERhc2hib2FyZFxVcGRhdGVBcHBvaW50bWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/.net codes/AppoinmentSystem/App/Views/Shared/Error.cshtml]

@@ -16,7 +16,11 @@ namespace BLL.Services
             this.userRepo = userRepo;
             this.mapper = mapper;
         }
-
+        public List<UserDTO> GetAllUsers()
+        {
+            var users = userRepo.GetAll();
+            return mapper.Map<List<UserDTO>>(users);
+        }
         public bool CreateUser(UserRegisterDTO registerDto)
         {
             if (userRepo.EmailExists(registerDto.Email))

@@ -41,8 +41,8 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 10px;">Dr. @ViewBag.DoctorName</td>
-                        <td style="border: 1px solid #ddd; padding: 10px;">@item.AppointmentDateTime.ToString("MMM dd, yyyy hh:mm tt")</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">@item.DoctorName</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">@item.AppointmentDateTime.ToString("MMM dd, yyyy")</td>
                         <td style="border: 1px solid #ddd; padding: 10px;">
                             @if (item.Status == "Scheduled")
                             {
@@ -67,10 +67,11 @@
                                 <span style="color: orange;">Pending</span>
                             }
                         </td>
-                        <td style="border: 1px solid #ddd; padding: 10px;">
+                        <td style="border: 1px solid #ddd; padding: 10px; display: flex; gap: 30px;">
                             @if (item.Status == "Scheduled")
                             {
                                 <a asp-action="CancelAppointment" asp-route-id="@item.Id" onclick="return confirm('Are you sure you want to cancel this appointment?')" style="color: red;">Cancel</a>
+                                <a asp-action="UpdateAppointment" asp-route-id="@item.Id" style="color:black; margin-right: 10px;">Edit</a>
                             }
                             else
                             {

@@ -11,20 +11,39 @@
 </head>
 <body>
     <header>
-        <nav style="display: flex; justify-content:end; align-items:center; margin:20px; ">
-            
-                <div style="font-size:20px; text-align:center;">
+        <nav class="container" style=" ">
+            <div style="font-size:20px; display: flex; justify-content:center;gap: 50px; margin:50px 0px;">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <span>Welcome, @User.Identity.Name!</span>
+                        if (User.IsInRole("Patient"))
+                            {
+                                <a asp-controller="PatientDashboard" asp-action="Index">Dashboard</a>
+                                <a asp-controller="PatientDashboard" asp-action="MyAppointments">My Appointments</a>
+                                <a asp-controller="PatientDashboard" asp-action="BookAppointment">Book Appointment</a>
+                                <span>@ViewBag.PatientName!</span>
+                            }
+                            else if (User.IsInRole("Doctor"))
+                            {
+                                <a asp-controller="DoctorDashboard" asp-action="Index">Dashboard</a>
+                                <a asp-controller="DoctorDashboard" asp-action="MyAppointments">My Appointments</a>
+                                <a asp-controller="DoctorDashboard" asp-action="TodayAppointments">Today's Schedule</a>
+                                <span>@ViewBag.DoctorName!</span>
+                            }
+                            else if (User.IsInRole("Admin"))
+                            {
+                                <a asp-controller="AdminDashboard" asp-action="Users">Dashboard</a>
+                                <span>@ViewBag.AdminName!</span>
+                            }
                         <form asp-controller="Account" asp-action="Logout" method="post" style="display: inline;">
                             <button style="font-size:20px; padding: 2px 4px; color:white; background:green;" type="submit">Logout</button>
                         </form>
                     }
                     else
                     {
-                        <a asp-controller="Account" asp-action="Login">Login</a>
-                        <a asp-controller="Account" asp-action="Register">Register</a>
+                        <div style="justify-content:center; display: flex; gap: 10px;">
+                            <a asp-controller="Account" asp-action="Login">Login</a>
+                            <a asp-controller="Account" asp-action="Register">Register</a>
+                        </div>
                     }
                 </div>
         </nav>

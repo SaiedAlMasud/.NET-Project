@@ -43,6 +43,7 @@ namespace App.Controllers
             var user = userService.GetUserByEmail(User.Identity.Name);
             var doctor = doctorService.GetDoctorByUserId(user.Id);
             var appointments = appointmentService.GetTodayAppointmentsByDoctorId(doctor.Id);
+            ViewBag.DoctorName = $"Dr. {doctor.FirstName} {doctor.LastName}";
             return View(appointments);
         }
 

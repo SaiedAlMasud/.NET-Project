@@ -64,6 +64,18 @@ namespace BLL.Services
             var data = mapper.Map<Appointment>(appointment);
             return repo.Create(data);
         }
+        // Delete appointment
+        public bool DeleteAppointment(int id)
+        {
+            return repo.Delete(id);
+        }
+
+        // Update appointment
+        public bool UpdateAppointment(AppointmentDTO appointment)
+        {
+            var data = mapper.Map<Appointment>(appointment);
+            return repo.Update(data);
+        }
 
         public bool CancelAppointment(int id)
         {
@@ -86,8 +98,8 @@ namespace BLL.Services
         public List<AppointmentDTO> GetTodayAppointmentsByDoctorId(int doctorId)
         {
             var data = repo.GetAppointmentsByDoctorId(doctorId);
-            var today = DateTime.Today;
-            var appointments = data.Where(a => a.AppointmentDateTime.Date == today).ToList();
+            var today = DateOnly.FromDateTime(DateTime.Today);
+            var appointments = data.Where(a => a.AppointmentDateTime == today).ToList();
             return mapper.Map<List<AppointmentDTO>>(appointments);
         }
 
@@ -112,8 +124,8 @@ namespace BLL.Services
         public List<AppointmentDTO> GetTodayAppointments()
         {
             var data = repo.Get();
-            var today = DateTime.Today;
-            var appointments = data.Where(a => a.AppointmentDateTime.Date == today).ToList();
+            var today = DateOnly.FromDateTime(DateTime.Today);
+            var appointments = data.Where(a => a.AppointmentDateTime == today).ToList();
             return mapper.Map<List<AppointmentDTO>>(appointments);
         }
     }

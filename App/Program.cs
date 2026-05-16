@@ -29,6 +29,7 @@ builder.Services.AddAuthorization();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
+builder.Services.AddScoped<AdminRepo>();
 builder.Services.AddScoped<UserRepo>();
 builder.Services.AddScoped<PatientRepo>();
 builder.Services.AddScoped<DoctorRepo>();
@@ -38,6 +39,7 @@ builder.Services.AddScoped<DoctorScheduleRepo>();
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<PatientService>();
 builder.Services.AddScoped<DoctorService>();
+builder.Services.AddScoped<AdminService>();
 builder.Services.AddScoped<AppointmentService>();
 builder.Services.AddScoped<DoctorScheduleService>();
 

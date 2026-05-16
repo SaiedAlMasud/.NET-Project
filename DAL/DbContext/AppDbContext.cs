@@ -16,6 +16,8 @@ public partial class AppDbContext : Microsoft.EntityFrameworkCore.DbContext
     {
     }
 
+    public virtual DbSet<Admin> Admins { get; set; }
+
     public virtual DbSet<Appointment> Appointments { get; set; }
 
     public virtual DbSet<Doctor> Doctors { get; set; }
@@ -32,9 +34,30 @@ public partial class AppDbContext : Microsoft.EntityFrameworkCore.DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Admin>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK_Admin");
+
+            entity.Property(e => e.DateOfBirth).HasColumnType("datetime");
+            entity.Property(e => e.Email)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.FirstName)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.Gender)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.LastName)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.PhoneNumber)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+        });
+
         modelBuilder.Entity<Appointment>(entity =>
         {
-            entity.Property(e => e.AppointmentDateTime).HasColumnType("datetime");
             entity.Property(e => e.FinalAmount).HasColumnType("decimal(10, 2)");
             entity.Property(e => e.PaymentStatus)
                 .HasMaxLength(50)

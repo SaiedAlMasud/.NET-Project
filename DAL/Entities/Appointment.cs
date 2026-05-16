@@ -11,7 +11,7 @@ public partial class Appointment
 
     public int DoctorId { get; set; }
 
-    public DateTime AppointmentDateTime { get; set; }
+    public DateOnly AppointmentDateTime { get; set; }
 
     public string Status { get; set; } = null!;
 
