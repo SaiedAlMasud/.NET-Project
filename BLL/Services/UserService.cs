@@ -66,5 +66,30 @@ namespace BLL.Services
             var user = userRepo.GetByEmail(email);
             return user != null ? user.Id : 0;
         }
+        public UserDTO GetUserById(int id)
+        {
+            var user = userRepo.GetById(id);
+            return mapper.Map<UserDTO>(user);
+        }
+
+        public bool ResetPassword(int userId, string newPassword)
+        {
+            var user = userRepo.GetById(userId);
+            if (user == null) return false;
+
+            user.Password = newPassword;
+            return userRepo.Update(user);
+        }
+
+        public bool DeleteUser(int id)
+        {
+            return userRepo.Delete(id);
+        }
+
+        public bool UpdateUser(UserDTO userDto)
+        {
+            var user = mapper.Map<User>(userDto);
+            return userRepo.Update(user);
+        }
     }
 }

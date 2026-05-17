@@ -1,0 +1,106 @@
+﻿@model BLL.DTOs.UserDTO
+
+@{
+    ViewData["Title"] = "User Details";
+    Layout = "_Layout";
+    var patientInfo = ViewBag.PatientInfo as BLL.DTOs.PatientDTO;
+    var doctorInfo = ViewBag.DoctorInfo as BLL.DTOs.DoctorDTO;
+    var adminInfo = ViewBag.AdminInfo as BLL.DTOs.AdminDTO;
+}
+
+<div style="padding: 20px; max-width: 600px; margin: 0 auto;">
+    <h1>User Details</h1>
+    
+    <hr />
+    
+    <div style="border: 1px solid #ddd; padding: 20px; border-radius: 5px;">
+        <h3>Account Information</h3>
+        
+        <div style="margin-bottom: 10px;">
+            <strong>ID:</strong> @Model.Id
+        </div>
+        <div style="margin-bottom: 10px;">
+            <strong>Email:</strong> @Model.Email
+        </div>
+        <div style="margin-bottom: 10px;">
+            <strong>Role:</strong>
+            @if (Model.Role == "Admin")
+            {
+                <span style="background: #dc3545; color: white; padding: 3px 8px; border-radius: 3px;">@Model.Role</span>
+            }
+            else if (Model.Role == "Doctor")
+            {
+                <span style="background: #28a745; color: white; padding: 3px 8px; border-radius: 3px;">@Model.Role</span>
+            }
+            else
+            {
+                <span style="background: #007bff; color: white; padding: 3px 8px; border-radius: 3px;">@Model.Role</span>
+            }
+        </div>
+    </div>
+    
+    @if (patientInfo != null)
+    {
+        <div style="border: 1px solid #ddd; padding: 20px; border-radius: 5px; margin-top: 20px;">
+            <h3>Patient Information</h3>
+            
+            <div style="margin-bottom: 10px;">
+                <strong>Full Name:</strong> @patientInfo.FirstName @patientInfo.LastName
+            </div>
+            <div style="margin-bottom: 10px;">
+                <strong>Phone:</strong> @patientInfo.PhoneNumber
+            </div>
+            <div style="margin-bottom: 10px;">
+                <strong>Date of Birth:</strong> @patientInfo.DateOfBirth.ToString("yyyy-MM-dd")
+            </div>
+            <div style="margin-bottom: 10px;">
+                <strong>Gender:</strong> @patientInfo.Gender
+            </div>
+        </div>
+    }
+    
+    @if (doctorInfo != null)
+    {
+        <div style="border: 1px solid #ddd; padding: 20px; border-radius: 5px; margin-top: 20px;">
+            <h3>Doctor Information</h3>
+            
+            <div style="margin-bottom: 10px;">
+                <strong>Full Name:</strong> Dr. @doctorInfo.FirstName @doctorInfo.LastName
+            </div>
+            <div style="margin-bottom: 10px;">
+                <strong>Specialization:</strong> @doctorInfo.Specialization
+            </div>
+            <div style="margin-bottom: 10px;">
+                <strong>Phone:</strong> @doctorInfo.PhoneNumber
+            </div>
+            <div style="margin-bottom: 10px;">
+                <strong>Consultation Fee:</strong> @doctorInfo.ConsultationFee Taka
+            </div>
+        </div>
+    }
+    @if (adminInfo != null)
+    {
+        <div style="border: 1px solid #ddd; padding: 20px; border-radius: 5px; margin-top: 20px;">
+            <h3>Admin Information</h3>
+            
+            <div style="margin-bottom: 10px;">
+                <strong>Full Name:</strong>@adminInfo.FirstName @adminInfo.LastName
+            </div>
+            <div style="margin-bottom: 10px;">
+                <strong>Email:</strong> @adminInfo.Email
+            </div>
+            <div style="margin-bottom: 10px;">
+                <strong>Phone:</strong> @adminInfo.PhoneNumber
+            </div>
+            <div style="margin-bottom: 10px;">
+                <strong>Gender:</strong> @adminInfo.Gender
+            </div>
+        </div>
+    }
+    
+    <div style="margin-top: 20px;">
+        <a asp-action="Users" style="display: inline-block; padding: 8px 15px; background: #6c757d; color: white; font-size:18px; text-decoration: none; border-radius: 4px;">Back to Users</a>
+        <a asp-action="ResetPassword" asp-route-id="@Model.Id" style="display: inline-block; padding: 8px 15px; background: #0398fc; color: #000; font-size:18px; text-decoration: none; border-radius: 4px; margin-left: 10px;">Reset Password</a>
+        <a asp-action="DeleteUser" asp-route-id="@Model.Id" onclick="return confirm('Are you sure?')" style="display: inline-block; padding: 8px 15px; background: #dc3545; color: white; font-size:18px;text-decoration: none; border-radius: 4px; margin-left: 10px;">Delete User</a>
+    </div>
+</div>

@@ -36,7 +36,7 @@ namespace DAL.Repos
             return db.Users.Any(u => u.Email == email && u.Password == password);
         }
 
-        public User Get(int id)
+        public User GetById(int id)
         {
             return db.Users.Find(id);
         }
@@ -48,10 +48,19 @@ namespace DAL.Repos
 
         public bool Delete(int id)
         {
-            var user = Get(id);
+            var user = GetById(id);
             if (user == null) return false;
 
             db.Users.Remove(user);
+            return db.SaveChanges() > 0;
+        }
+
+        public bool Update(User user)
+        {
+            var existing = GetById(user.Id);
+            if (existing == null) return false;
+
+            db.Entry(existing).CurrentValues.SetValues(user);
             return db.SaveChanges() > 0;
         }
     }

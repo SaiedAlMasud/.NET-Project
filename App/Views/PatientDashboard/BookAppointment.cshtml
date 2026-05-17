@@ -10,9 +10,7 @@
     <h1>Book an Appointment</h1>
     <hr />
     
-    <form asp-action="BookAppointment" method="post">
-        <div asp-validation-summary="All" style="color: red; margin-bottom: 15px;"></div>
-        
+    <form asp-action="BookAppointment" method="post">       
         <div style="margin-bottom: 15px;">
             <label asp-for="DoctorId">Select Doctor</label><br />
             <select asp-for="DoctorId" style="width: 100%; padding: 8px; margin-top: 5px;" required>
@@ -29,8 +27,8 @@
         </div>
         
         <div style="margin-bottom: 15px;">
-            <label asp-for="AppointmentDateTime">Appointment Date & Time</label><br />
-            <input asp-for="AppointmentDateTime" type="date" style="width: 100%; padding: 8px; margin-top: 5px;" required />
+            <label asp-for="AppointmentDateTime">Appointment Date</label><br />
+            <input asp-for="AppointmentDateTime" type="date" style="width: 100%; padding: 8px; margin-top: 5px;" />
             <span asp-validation-for="AppointmentDateTime" style="color: red;"></span>
         </div>
         
